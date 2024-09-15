@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services APP - Home</title>
+    <style>
+        /* General reset and styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar ul li {
+            display: inline-block;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: ;
+            font-size: 18px;
+        }
+
+        /* Right side buttons styling */
+        .navbar .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .auth-buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .navbar .auth-buttons button:hover {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Services APP</div>
+        <ul>
+            <li><a href="#">Vehicle Repair</a></li>
+            <li><a href="#">TV Repair</a></li>
+            <li><a href="#">Fridge Repair</a></li>
+            <li><a href="#">Washing Machine Repair</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <button onclick="window.location.href='registration2.html'">Register</button>
+            <button onclick="window.location.href='login.html'">Login</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section style="padding: 20px; text-align: center;">
+        <h1>Welcome to Services APP</h1>
+        <p>We offer a variety of repair services for your household needs.</p>
+    </section>
+
+</body>
+</html>

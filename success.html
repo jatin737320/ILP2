@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success - Aircraft Maintenance Management</title>
+    <style>
+        body {
+            background-color: black;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwsaZT-qWY8tSZ4BQ4ZEw898Jg7JDruQyq-g&s');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent background */
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="successMessage"></h2>
+        <p> ${username} Your registration was successful! Redirecting you to the login page...</p>
+    </div>
+
+    <script>
+        // Retrieve the username from localStorage and display it
+        const username = localStorage.getItem('username');
+        if (username) {
+            document.getElementById('successMessage').textContent = `Welcome, ${username}! Registration Successful.`;
+        } else {
+            document.getElementById('successMessage').textContent = 'Registration Successful.';
+        }
+
+        // Redirect to login page after a short delay
+        setTimeout(function() {
+            window.location.href = 'login.html';
+        }, 3000); // 3 seconds delay
+    </script>
+</body>
+</html>
