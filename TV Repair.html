@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Repair - Services APP</title>
+    <style>
+        
+        body {
+            background-image: url("https://5.imimg.com/data5/DZ/WI/LU/SELLER-6814007/repair-maintenance.png");
+            background-color: #f5f5f5; /* Fallback color */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px 0;
+            text-align: left;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px 20px; /* Increased padding to make space */
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Space between items */
+        }
+
+        .navbar .brand {
+            background-color: #c0c0c0; /* Silver color */
+            border-radius: 4px;
+            padding: 10px 20px;
+            color: #333;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .navbar span {
+            float: left;
+            display: block;
+            color: #007bff;
+            text-align: center;
+            padding: 14px 20px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: default; /* Prevents hover interaction */
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #007bff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar .auth-buttons button {
+            float: right;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            
+        }
+
+        .navbar .logout {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            cursor: pointer;
+            font-size: 17px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-left: auto; /* Pushes the button to the right */
+        }
+        
+        .navbar .logout:hover {
+            background-color: #c82333;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 450px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        input, select {
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 100%;
+            border-radius: 8px; /* Rounded edges */
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px; /* Rounded button */
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    
+    
+    <div class = "navbar">
+        <span class = "brand">Services App</span>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="Vehicle Repair.html">Vehicle Repair</a>
+        <a href="TV Repair.html">TV Repair</a>
+        <a href="Referigerator.html">Fridge Repair</a>
+        <a href="Washing Machine Repair.html">Washing Machine Repair</a>
+        <a href="Product Drop.html">Product Pick/Drop</a>
+        <a href="AC Repair.html">AC Repair</a>
+        <a href="House Cleaning">House Cleaning</a>
+        <a href="logout.html" class="logout">Logout</a>
+    
+    </div>
+
+    <header>
+        <h1>TV Repair - Services APP</h1>
+    </header>
+
+    <div class="container">
+        <section class="tv-repair-form">
+            <h2>Book a TV Repair Slot</h2>
+            <form id="tvRepairForm">
+                <label for="dateSlot">Select Date/Slot</label>
+                <input type="datetime-local" id="dateSlot" name="dateSlot" required>
+
+                <label for="address">Enter Address</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="vendor">Select Vendor</label>
+                <select id="vendor" name="vendor" required>
+                    <option value="">Select Vendor</option>
+                    <option value="Vendor1">Vendor 1</option>
+                    <option value="Vendor2">Vendor 2</option>
+                    <option value="Vendor3">Vendor 3</option>
+                </select>
+
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" name="amount" required>
+
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Services APP. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('tvRepairForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Generate a random Order ID
+            const orderId = 'TVR' + Math.floor(Math.random() * 1000000);
+            
+            // Store the Order ID in localStorage for use in the success page
+            localStorage.setItem('orderId', orderId);
+
+            // Redirect to the success page
+            window.location.href = 'success1.html';
+        });
+    </script>
+</body>
+</html>

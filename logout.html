@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Services APP</title>
+    <script>
+        // Function to redirect to the homepage after 3 seconds
+        function redirectToHome() {
+            setTimeout(function(){
+                window.location.href = "homepage.html"; // Replace with the actual homepage file path
+            }, 3000); // 3000 milliseconds = 3 seconds
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 50px;
+            margin: 0 auto;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
+</head>
+<body onload="redirectToHome()">
+    <div class="container">
+        <h1>Logged Out Successfully</h1>
+        <p>You will be redirected to the homepage shortly...</p>
+    </div>
+</body>
+</html>

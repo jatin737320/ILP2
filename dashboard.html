@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Services APP</title>
+    <style>
+        body {
+            background-image: url("https://5.imimg.com/data5/DZ/WI/LU/SELLER-6814007/repair-maintenance.png");
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px 0;
+            text-align: left;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px 20px; /* Increased padding to make space */
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Space between items */
+        }
+
+        .navbar .brand {
+            background-color: #c0c0c0; /* Silver color */
+            border-radius: 4px;
+            padding: 10px 20px;
+            color: #333;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .navbar span {
+            float: left;
+            display: block;
+            color: #007bff;
+            text-align: center;
+            padding: 14px 20px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: default; /* Prevents hover interaction */
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #007bff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar .logout {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            cursor: pointer;
+            font-size: 17px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-left: auto; /* Pushes the button to the right */
+        }
+        
+        .navbar .logout:hover {
+            background-color: #c82333;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .pagination a {
+            margin: 0 5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .pagination a.active {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff;
+        }
+
+        .pagination a:hover {
+            background-color: #ddd;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <span class = "brand">Services App</span>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="Vehicle Repair.html">Vehicle Repair</a>
+        <a href="TV Repair.html">TV Repair</a>
+        <a href="Referigerator.html">Fridge Repair</a>
+        <a href="Washing Machine Repair.html">Washing Machine Repair</a>
+        <a href="Product Drop.html">Product Pick/Drop</a>"
+        <a href="AC Repair.html">AC Repair</a>
+        <a href="House Cleaning">House Cleaning</a>
+        <a href="logout.html" class="logout">Logout</a>
+    </div>
+
+    <header>
+        <h1>User Orders Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>User/Customer ID</th>
+                    <th>User Name</th>
+                    <th>Service ID</th>
+                    <th>Date</th>
+                    <th>Slot</th>
+                    <th>Service</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="orderTableBody">
+                <!-- Dynamic rows will be inserted here -->
+            </tbody>
+        </table>
+
+        <div class="pagination" id="pagination">
+            <!-- Pagination links will be inserted here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Services APP. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const orders = [
+            { id: 1, userId: 'U001', userName: 'John Doe', serviceId: 'S001', date: '2024-09-01', slot: '10:00 AM', service: 'TV Repair', status: 'Completed' },
+            { id: 2, userId: 'U002', userName: 'Jane Smith', serviceId: 'S002', date: '2024-09-02', slot: '11:00 AM', service: 'Vehicle Repair', status: 'Pending' },
+            { id: 3, userId: 'U003', userName: 'Emily Johnson', serviceId: 'S003', date: '2024-09-03', slot: '12:00 PM', service: 'Fridge Repair', status: 'Completed' },
+            { id: 4, userId: 'U004', userName: 'Michael Brown', serviceId: 'S004', date: '2024-09-04', slot: '01:00 PM', service: 'Washing Machine Repair', status: 'In Progress' },
+            { id: 5, userId: 'U005', userName: 'Sarah Davis', serviceId: 'S005', date: '2024-09-05', slot: '02:00 PM', service: 'Product Drop Service', status: 'Completed' },
+            { id: 6, userId: 'U006', userName: 'David Wilson', serviceId: 'S006', date: '2024-09-06', slot: '03:00 PM', service: 'TV Repair', status: 'Pending' },
+            // Add more sample data if needed
+        ];
+
+        const rowsPerPage = 5;
+        let currentPage = 1;
+
+        function displayTable(page) {
+            const start = (page - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            const paginatedOrders = orders.slice(start, end);
+
+            const tableBody = document.getElementById('orderTableBody');
+            tableBody.innerHTML = '';
+
+            paginatedOrders.forEach(order => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${order.userId}</td>
+                    <td>${order.userName}</td>
+                    <td>${order.serviceId}</td>
+                    <td>${order.date}</td>
+                    <td>${order.slot}</td>
+                    <td>${order.service}</td>
+                    <td>${order.status}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function setupPagination() {
+            const pageCount = Math.ceil(orders.length / rowsPerPage);
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            for (let i = 1; i <= pageCount; i++) {
+                const link = document.createElement('a');
+                link.href = '#';
+                link.textContent = i;
+                if (i === currentPage) {
+                    link.classList.add('active');
+                }
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentPage = i;
+                    displayTable(currentPage);
+                    setupPagination();
+                });
+                pagination.appendChild(link);
+            }
+        }
+
+        displayTable(currentPage);
+        setupPagination();
+    </script>
+</body>
+</html>
